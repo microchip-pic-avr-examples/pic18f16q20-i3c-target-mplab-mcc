@@ -85,7 +85,7 @@ The following peripheral and clock configurations are set up using MPLAB® Code 
 - Rx DMA Channel Selection: DMA2
 - I3C PLIB Selector: I3C1
 
-![i3c_target_dma_config](images/clock_control_config.png)  
+![i3c_target_dma_config](images/i3c_target_dma_config.png) 
 
 ### I3C1PLIB
 
