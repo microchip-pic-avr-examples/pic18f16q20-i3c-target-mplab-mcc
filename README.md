@@ -54,13 +54,13 @@ The following connections are necessary for this example:
 | RA2 | SW0 |
 
 ### Curiosity Nano Adapter Setup
-A Curiousity Nano Adapter Baseboard provides convienent pins for connecting to both the Controller and the Protocol Analyzer.
+A Curiousity Nano Adapter Baseboard provides convienent pins for connecting to both the Controller and the Protocol Analyzer.  
 
-<img src="./images/hardware_setup.png" width="400">
+<img src="./images/hardware_setup.png" width="400">  
 
 ## Peripheral Configuration Using MCC
 
-This section explains the peripheral configuration using the MPLAB® X IDE with MCC plug-in required to recreate the project. 
+This section explains the peripheral configuration using the MPLAB® X IDE with MCC plug-in required to recreate the project.   
 
 Additional Links: [MCC Melody Technical Reference](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.INTRODUCTION&redirect=true)
 
@@ -72,7 +72,7 @@ The following peripheral and clock configurations are set up using MPLAB® Code 
   - HF Internal Clock: 64_MHz
   - Clock Divider: 1
   <br><br>
-  <img src="images/clock_control_config.png" width="400">
+  <img src="images/clock_control_config.png" width="400">  
 
 ### I3C Target Module
 - Tx DMA Channel Selection: DMA1
