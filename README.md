@@ -56,7 +56,7 @@ The following connections are necessary for this example:
 ### Curiosity Nano Adapter Setup
 A Curiousity Nano Adapter Baseboard provides convienent pins for connecting to both the Controller and the Protocol Analyzer.  
 
-![hardware_setup](images/hardware_setup.jpg) 
+![hardware_setup](images/hardware_setup.jpg)  
 
 ## Peripheral Configuration Using MCC
 
