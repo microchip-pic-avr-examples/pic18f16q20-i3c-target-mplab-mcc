@@ -47,6 +47,7 @@ static void I3C1_ResetRxDMA(void);
 
 // I3C1 Default Callback Handlers
 
+static void (*I3C1_SupportedCCCReceivedHandler)(void) = NULL;
 static void (*I3C1_TransactionCompleteHandler)(struct I3C_TARGET_TRANSACTION_COMPLETE_STATUS *transactionCompleteStatus) = NULL;
 static void (*I3C1_IBIDoneHandler)(void) = NULL;
 
@@ -151,8 +152,8 @@ void I3C1_Initialize(void)
     I3C1IBIMDB = 0x0;
 
 	
-	// SCCCIE disabled; BTFIE disabled; DADRIE disabled; SADRIE disabled; I2CACKIE disabled; RSCIE disabled; PCIE disabled; SCIE disabled; 
-	I3C1PIE0 = 0x0;
+	// SCCCIE enabled; BTFIE disabled; DADRIE disabled; SADRIE disabled; I2CACKIE disabled; RSCIE disabled; PCIE disabled; SCIE disabled; 
+	I3C1PIE0 = 0x1;
 	// IBIDONEIE enabled; DACHIE disabled; TCOMPIE enabled; 
 	I3C1PIE1 = 0xA0;
 	
@@ -420,6 +421,14 @@ enum I3C_RESET_ACTION I3C1_ResetActionGetAndClear(void)
     return resetAction;   
 }
 
+void I3C1_SupportedCCCReceivedCallbackRegister(void (*handler)(void))
+{
+    if(handler != NULL)
+    {
+        I3C1_SupportedCCCReceivedHandler = handler;
+    }
+}
+
 void I3C1_TransactionCompleteCallbackRegister(void (*handler)(struct I3C_TARGET_TRANSACTION_COMPLETE_STATUS *transactionCompleteStatus))
 {
     if(handler != NULL)
@@ -454,6 +463,15 @@ void I3C1_RxSoftwareBufferFullCallbackRegister(void (*handler)(void))
 
 void I3C1_General_ISR(void)
 {
+	if(I3C1PIR0bits.SCCCIF == 1)
+	{
+		I3C1PIR0bits.SCCCIF = 0;
+		
+	    if(I3C1_SupportedCCCReceivedHandler != NULL)
+		{
+		    I3C1_SupportedCCCReceivedHandler();
+		}
+	}
 	if(I3C1PIR1bits.TCOMPIF == 1)
 	{
 		I3C1PIR1bits.TCOMPIF = 0;

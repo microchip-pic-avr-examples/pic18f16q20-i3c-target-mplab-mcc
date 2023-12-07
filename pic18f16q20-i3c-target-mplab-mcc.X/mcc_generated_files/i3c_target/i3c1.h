@@ -313,6 +313,14 @@ enum I3C_RESET_ACTION I3C1_ResetActionGetAndClear(void);
 
 /**
  * @ingroup i3c_target_driver
+ * @brief Setter function for the I3C1_SupportedCCCReceived callback.
+ * @param [in] handler - Pointer to the function to be called when a Supported Common Code Command is received.
+ * @return None.  
+ */
+void I3C1_SupportedCCCReceivedCallbackRegister(void (*handler)(void));
+
+/**
+ * @ingroup i3c_target_driver
  * @brief Setter function for the I3C1_TransactionComplete callback.
  * @param [in] handler - Pointer to the function to be called when Stop or Restart condition is detected after a Private I3C or an IBI transaction.   
  * @return None.  
@@ -527,6 +535,11 @@ void I3C1_Reset_ISR(void);
  * @brief Defines the Custom Name for I3C1_ResetActionGetAndClear() API.
  */
 #define I3C1_Target_ResetActionGetAndClear I3C1_ResetActionGetAndClear
+/**
+ * @ingroup i3c_target_driver
+ * @brief Defines the Custom Name for I3C1_SupportedCCCReceivedCallbackRegister() API.
+ */
+#define I3C1_Target_SupportedCCCReceivedCallbackRegister I3C1_SupportedCCCReceivedCallbackRegister
 /**
  * @ingroup i3c_target_driver
  * @brief Defines the Custom Name for I3C1_TransactionCompleteCallbackRegister() API.
