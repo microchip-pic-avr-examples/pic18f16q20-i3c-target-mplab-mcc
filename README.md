@@ -26,7 +26,7 @@ For more details and code examples on the PIC18F16Q20 click on the following lin
 - [MPLAB® Code Configurator (MCC) 5.4.1](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC18-Q20&utm_content=pic18f16q20-i3c-target-mplab-mcc-github&utm_bu=MCU08) or newer
 - [Microchip PIC18F-Q Series Device Support 1.23.425](https://packs.download.microchip.com/) or newer
 - MPLAB Data Visualizer
-- [Binho I3C Plugin for Saleae Logic](https://binho.io/pages/i3c-basic-protocol-analyzer)
+- [Binho I3C Plug-in for Saleae Logic](https://binho.io/pages/i3c-basic-protocol-analyzer)
 
 ## Hardware Used
 
@@ -39,11 +39,11 @@ For more details and code examples on the PIC18F16Q20 click on the following lin
 
 ![setup](images/setup.png)
 
-_Note: The Protocol Analyzer, Controller and PIC18-Q20 are all connected to the same ground.  Be careful not to create ground loops while doing this as it will interfere with the I3C bus._
+_Note: The Protocol Analyzer, Controller and PIC18-Q20 are connected to the same ground.  Be careful not to create ground loops while doing this as it will interfere with the I3C bus._
 
 The following connections are necessary for this example:
 
-1. Connect the I3C Serial Data (SDA) and I3C Serial Clock (SCL) pins of PIC18F16Q20 to the SCL, SDA pins of the Controller, respectively.
+1. Connect the I3C Serial Data (SDA) and I3C Serial Clock (SCL) pins of PIC18F16Q20 to the SCL, SDA pins of the Controller.
 2. Connect the I3C bus SCL and SDA pins to the I3C Protocol Analyzer to observe transactions in the bus.
 
 ### Pin Connection Table
@@ -69,7 +69,7 @@ This section explains the peripheral configuration using the MPLAB® X IDE with 
 
 Additional Links: [MCC Melody Technical Reference](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.INTRODUCTION&redirect=true)
 
-The following peripheral and clock configurations are set up using MPLAB® Code Configurator (MCC) Melody:
+The following peripheral and clock configurations are set up using MPLAB Code Configurator (MCC) Melody:
 
 ### Clock Control
 
@@ -89,7 +89,7 @@ The following peripheral and clock configurations are set up using MPLAB® Code 
 
 ### I3C1PLIB
 
-In the Module Level General Interrupt Callback Settings,
+In the Module Level General Interrupt Callback Settings:
 
 - Select Supported CCC Received Interrupt Enable
 - Select In-Band Interrupt Done Interrupt Enable
@@ -115,7 +115,7 @@ In the Module Level General Interrupt Callback Settings,
 
 ### Pin Configurations
 
-- Rename IO_RA2 as SW0, select Weak Pullup, and enable Interrupt on Change for the negative edge
+- Rename IO_RA2 as SW0, select Weak Pull-up, and enable Interrupt on Change for the negative edge
 - Rename IO_RC7 as LED0
 
 ![pins_config](images/pins_config.png)  
