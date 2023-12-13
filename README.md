@@ -17,12 +17,12 @@ For more details and code examples on the PIC18F16Q20 click on the following lin
 
 - [PIC18F16Q20 Product Page](https://www.microchip.com/en-us/product/PIC18F16Q20?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC18-Q20&utm_content=pic18f16q20-i3c-target-mplab-mcc-github&utm_bu=MCU08)
 - [PIC18F16Q20 Data Sheet](https://www.microchip.com/DS40002387)
-- [PIC18F16Q20 Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=PIC18F16Q20)
+- [PIC18F16Q20 Code Examples](https://mplab-discover.microchip.com/v2?dsl=PIC18F16Q20)
 
 ## Software Used
 
-- MPLAB® X IDE 6.1.5 or newer [(MPLAB® X IDE 6.1)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic18f16q20-i3c-target-mplab-mcc-github)
-- MPLAB® XC8 2.4.5 or newer compiler [(MPLAB® XC8 2.4)](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC18-Q20&utm_content=pic18f16q20-i3c-target-mplab-mcc-github&utm_bu=MCU08)
+- MPLAB® X IDE 6.15 or newer [(MPLAB® X IDE 6.15)](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC18-Q20&utm_content=pic18f16q20-i3c-target-mplab-mcc-github&utm_bu=MCU08)
+- MPLAB® XC8 2.45 or newer compiler [(MPLAB® XC8 2.45)](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC18-Q20&utm_content=pic18f16q20-i3c-target-mplab-mcc-github&utm_bu=MCU08)
 - [MPLAB® Code Configurator (MCC) 5.4.1](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_PIC18-Q20&utm_content=pic18f16q20-i3c-target-mplab-mcc-github&utm_bu=MCU08) or newer
 - [Microchip PIC18F-Q Series Device Support 1.23.425](https://packs.download.microchip.com/) or newer
 - MPLAB Data Visualizer
