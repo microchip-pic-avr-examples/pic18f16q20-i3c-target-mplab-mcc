@@ -5,12 +5,12 @@
  * 
  * @defgroup uart1 UART1
  * 
- * @brief This file contains API prototypes and other data types for the UART1 module.
+ * @brief This file contains API prototypes and other datatypes for UART1 module.
  *
- * @version UART1 Driver Version 3.0.6
+ * @version UART1 Driver Version 3.0.4
 */
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -33,6 +33,9 @@
 #ifndef UART1_H
 #define UART1_H
 
+/**
+  Section: Included Files
+ */
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -61,9 +64,6 @@
 #define UART1_TransmitDisable      UART1_TransmitDisable
 #define UART1_AutoBaudSet          UART1_AutoBaudSet
 #define UART1_AutoBaudQuery        UART1_AutoBaudQuery
-#define UART1_AutoBaudDetectCompleteReset  UART1_AutoBaudDetectCompleteReset
-#define UART1_IsAutoBaudDetectOverflow     UART1_IsAutoBaudDetectOverflow
-#define UART1_AutoBaudDetectOverflowReset  UART1_AutoBaudDetectOverflowReset
 #define UART1_BRGCountSet               (NULL)
 #define UART1_BRGCountGet               (NULL)
 #define UART1_BaudRateSet               (NULL)
@@ -94,6 +94,9 @@ typedef union {
     size_t status;            /**<Group byte for status errors*/
 }uart1_status_t;
 
+/**
+ Section: Data Type Definitions
+ */
 
 /**
  * @ingroup uart1
@@ -103,8 +106,10 @@ extern const uart_drv_interface_t UART1;
 
 /**
  * @ingroup uart1
- * @brief Initializes the UART1 module. This routine is called
- *        only once during system initialization, before calling other APIs.
+ * @brief This API initializes the UART1 driver.
+ *        This routine initializes the UART1 module.
+ *        This routine must be called before any other UART1 routine is called.
+ *        This routine should only be called once during system initialization.
  * @param None.
  * @return None.
  */
@@ -112,8 +117,8 @@ void UART1_Initialize(void);
 
 /**
  * @ingroup uart1
- * @brief Deinitializes and disables the UART1 module.
-
+ * @brief This API Deinitializes the UART1 driver.
+ *        This routine disables the UART1 module.
  * @param None.
  * @return None.
  */
@@ -121,7 +126,7 @@ void UART1_Deinitialize(void);
 
 /**
  * @ingroup uart1
- * @brief Enables the UART1 module.     
+ * @brief This API enables the UART1 module.     
  * @param None.
  * @return None.
  */
@@ -129,7 +134,7 @@ inline void UART1_Enable(void);
 
 /**
  * @ingroup uart1
- * @brief Disables the UART1 module.
+ * @brief This API disables the UART1 module.
  * @param None.
  * @return None.
  */
@@ -137,8 +142,8 @@ inline void UART1_Disable(void);
 
 /**
  * @ingroup uart1
- * @brief Enables the UART1 transmitter. This routine also enables
- *        UART1 to send bytes over the TX pin.
+ * @brief This API enables the UART1 transmitter.
+ *        UART1 should also be enable to send bytes over TX pin.
  * @param None.
  * @return None.
  */
@@ -146,7 +151,7 @@ inline void UART1_TransmitEnable(void);
 
 /**
  * @ingroup uart1
- * @brief Disables the UART1 transmitter.
+ * @brief This API disables the UART1 transmitter.
  * @param None.
  * @return None.
  */
@@ -154,8 +159,8 @@ inline void UART1_TransmitDisable(void);
 
 /**
  * @ingroup uart1
- * @brief Enables the UART1 receiver. This routine also enables
- *        UART1 to send bytes over the RX pin.
+ * @brief This API enables the UART1 Receiver.
+ *        UART1 should also be enable to receive bytes over RX pin.
  * @param None.
  * @return None.
  */
@@ -163,7 +168,7 @@ inline void UART1_ReceiveEnable(void);
 
 /**
  * @ingroup uart1
- * @brief Disables the UART1 receiver.
+ * @brief This API disables the UART1 Receiver.
  * @param None.
  * @return None.
  */
@@ -171,7 +176,7 @@ inline void UART1_ReceiveDisable(void);
 
 /**
  * @ingroup uart1
- * @brief Enables the UART1 Send Break Control bit.
+ * @brief This API enables the UART1 send break control.
  * @param None.
  * @return None.
  */
@@ -179,7 +184,7 @@ inline void UART1_SendBreakControlEnable(void);
 
 /**
  * @ingroup uart1
- * @brief Disables the UART1 Send Break Control bit.
+ * @brief This API disables the UART1 send break control.
  * @param None.
  * @return None.
  */
@@ -187,8 +192,8 @@ inline void UART1_SendBreakControlDisable(void);
 
 /**
  * @ingroup uart1
- * @brief Enables the UART1 Auto-Baud Detection bit.
- * @param bool enable
+ * @brief This API enables the UART1 AutoBaud Detection.
+ * @param bool enable.
  * @return None.
  */
 inline void UART1_AutoBaudSet(bool enable);
@@ -196,7 +201,7 @@ inline void UART1_AutoBaudSet(bool enable);
 
 /**
  * @ingroup uart1
- * @brief Reads the UART1 Auto-Baud Detection Complete bit.
+ * @brief This API reads the UART1 AutoBaud Detection Complete bit.
  * @param None.
  * @return None.
  */
@@ -204,7 +209,7 @@ inline bool UART1_AutoBaudQuery(void);
 
 /**
  * @ingroup uart1
- * @brief Resets the UART1 Auto-Baud Detection Complete bit.
+ * @brief This API Reset the UART1 AutoBaud Detection Complete bit.
  * @param None.
  * @return None.
  */
@@ -212,7 +217,7 @@ inline void UART1_AutoBaudDetectCompleteReset(void);
 
 /**
  * @ingroup uart1
- * @brief Reads the UART1 Auto-Baud Detection Overflow bit.
+ * @brief This API reads the UART1 AutoBaud Detection overflow bit.
  * @param None.
  * @return None.
  */
@@ -220,7 +225,7 @@ inline bool UART1_IsAutoBaudDetectOverflow(void);
 
 /**
  * @ingroup uart1
- * @brief Resets the UART1 Auto-Baud Detection Overflow bit.
+ * @brief This API Reset the UART1 AutoBaud Detection Overflow bit.
  * @param None.
  * @return None.
  */
@@ -228,81 +233,81 @@ inline void UART1_AutoBaudDetectOverflowReset(void);
 
 /**
  * @ingroup uart1
- * @brief Checks if the UART1 receiver has received data and is ready to be read.
+ * @brief This API checks if UART1 receiver has received data and ready to be read.
  * @param None.
- * @retval True - UART1 receiver FIFO has data
- * @retval False - UART1 receiver FIFO is empty
+ * @retval true if UART1 receiver FIFO has a data
+ * @retval false UART1 receiver FIFO is empty
  */
 bool UART1_IsRxReady(void);
 
 /**
  * @ingroup uart1
- * @brief Checks if the UART1 transmitter is ready to accept a data byte.
+ * @brief This function checks if UART1 transmitter is ready to accept a data byte.
  * @param None.
- * @retval True -  The UART1 transmitter FIFO has at least a one byte space
- * @retval False - The UART1 transmitter FIFO is full
+ * @retval true if UART1 transmitter FIFO has atleast 1 byte space
+ * @retval false if UART1 transmitter FIFO is full
  */
 bool UART1_IsTxReady(void);
 
 /**
  * @ingroup uart1
- * @brief Returns the status of the Transmit Shift Register (TSR).
+ * @brief This function return the status of transmit shift register (TSR).
  * @param None.
- * @retval True - Data completely shifted out from the TSR
- * @retval False - Data is present in Transmit FIFO and/or in TSR
+ * @retval true if Data completely shifted out from the TSR
+ * @retval false if Data is present in Transmit FIFO and/or in TSR
  */
 bool UART1_IsTxDone(void);
 
 /**
  * @ingroup uart1
- * @brief Gets the error status of the last read byte. Call 
- *        this function before calling UART1_Read().
- * @pre Call UART1_RxEnable() to enable RX before calling this API.
+ * @brief This function gets the error status of the last read byte.
+ *        This function should be called before UART1_Read().
+ * @pre RX should be enable by calling UART1_RxEnable() before calling this API.
  * @param None.
- * @return Status of the last read byte. See the uart1_status_t struct for more details.
+ * @return Status of the last read byte. See uart1_status_t struct for more details.
  */
 size_t UART1_ErrorGet(void);
 
 /**
  * @ingroup uart1
- * @brief Reads the eight bits from the Receiver FIFO register.
- * @pre Check the transfer status to see if the receiver is not empty before calling this function. Check 
- *      UART1_IsRxReady() in if () before calling this API.
+ * @brief This function reads the 8 bits from receiver FIFO register.
+ * @pre The transfer status should be checked to see if the receiver is not empty
+ *      before calling this function. UART1_IsRxReady() should be checked in if () before calling this API.
  * @param None.
- * @return 8-bit data from the RX FIFO register
+ * @return 8-bit data from RX FIFO register.
  */
 uint8_t UART1_Read(void);
 
 /**
  * @ingroup uart1
- * @brief Writes a byte of data to the Transmitter FIFO register.
- * @pre Check the transfer status to see if the transmitter is not empty before calling this function. Check
- *      UART1_IsTxReady() in if () before calling this API.
- * @param txData  - Data byte to write to the TX FIFO
+ * @brief This function writes a byte of data to the transmitter FIFO register.
+ * @pre The transfer status should be checked to see if the transmitter is ready to accept a byte
+ *      before calling this function. UART1_IsTxReady() should be checked in if() before calling this API.
+ * @param txData  - Data byte to write to the TX FIFO.
  * @return None.
  */
 void UART1_Write(uint8_t txData);
 
 /**
  * @ingroup uart1
- * @brief Calls the function upon UART1 framing error.
- * @param callbackHandler - Function pointer called when the framing error condition occurs
+ * @brief This API registers the function to be called upon UART1 framing error.
+ * @param callbackHandler - a function pointer which will be called upon framing error condition.
  * @return None.
  */
 void UART1_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 /**
  * @ingroup uart1
- * @brief Calls the function upon UART1 overrun error.
- * @param callbackHandler - Function pointer called when the overrun error condition occurs
+ * @brief This API registers the function to be called upon UART1 overrun error.
+ * @param callbackHandler - a function pointer which will be called upon overrun error condition.
  * @return None.
  */
 void UART1_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 
 /**
  * @ingroup uart1
- * @brief Calls the function upon UART1 parity error.
- * @param callbackHandler - Function pointer called when the parity error condition occurs
+ * @brief This API registers the function to be called upon UART1 Parity error.
+ * @param callbackHandler - a function pointer which will be called upon Parity error condition.
  * @return None.
  */
 void UART1_ParityErrorCallbackRegister(void (* callbackHandler)(void));

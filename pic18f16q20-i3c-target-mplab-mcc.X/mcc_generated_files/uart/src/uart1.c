@@ -5,13 +5,13 @@
  * 
  * @ingroup uart1
  * 
- * @brief This is the generated driver implementation file for the UART1 driver using Configurable Custom Logic (CCL).
+ * @brief This is the generated driver implementation file for the UART1 driver using CCL
  *
- * @version UART1 Driver Version 3.0.6
+ * @version UART1 Driver Version 3.0.4
 */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 

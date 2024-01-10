@@ -11,7 +11,7 @@
 */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -65,6 +65,8 @@ void SYSTEM_Initialize(void)
 
 void CPU_Initialize(void)
 {
+    //PRLOCKED unlocked; 
+    PRLOCK = 0x0;
     //PR priority level 7; 
     SCANPR = 0x7;
     //PR priority level 7; 
@@ -83,8 +85,6 @@ void CPU_Initialize(void)
     PRODH = 0x0;
     //PRODL undefined; 
     PRODL = 0x0;
-    //PRLOCKED unlocked; 
-    PRLOCK = 0x0;
 }
 
 
